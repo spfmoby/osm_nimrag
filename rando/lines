@@ -4,15 +4,23 @@ access ~ '(private|no)' & (foot=no | foot!=*) & (bicycle=no | bicycle!=*) { add 
 tracktype ~ 'grade[1-2]' | smoothness ~ '(excellent|good)'  { add c_smoothness=good}
 tracktype ~ 'grade[3-4]' | smoothness ~ '(intermediate|bad|very_bad)'  { add c_smoothness=intermediate}
 
+
 # 0x10f01
 ##sentiers GR
 highway=* & c_route_gr=yes {name '${GR}'} [0x10f01 resolution 20 continue]
 ## sentiers GRP
 highway=* & c_route_grp=yes {name '${GRP}'} [0x10f01 resolution 20 continue]
+
+# 0x10f02
 ## sentiers balises (PR)
-highway=* & c_route_pr=yes [0x10f01 resolution 22 continue]
+highway=* & c_route_gr!=* & c_route_grp!=* & c_route_pr=yes [0x10f02 resolution 22 continue]
 ## sentiers balises 
-highway=* & ( c_route_hiking=yes | trailblazed=yes ) [0x10f01 resolution 22 continue]
+highway=* & c_route_gr!=* & c_route_grp!=* & ( c_route_hiking=yes | trailblazed=yes ) [0x10f02 resolution 22 continue]
+
+
+#network=nwn [0x10f01 resolution 20 continue]
+#network=rwn [0x10f01 resolution 20 continue]
+#network=lwn [0x10f02 resolution 22 continue]
 
 # 0x10f04 sentiers balises VTT
 highway=* &  c_route_mtb=yes & (c_route_hiking=no | c_route_hiking!=*) [0x10f04 resolution 22 continue]
