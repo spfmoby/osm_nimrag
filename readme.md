@@ -6,4 +6,6 @@ Le rendu se focalise sur la lisibilité pour l'utilisation en randonnée :
 - les sentiers sont mis en avant et distingués de manière assez importante
 ...
 
+Très largement inspiré du travail de https://gitlab.com/ravenfeld/garmincustommap/-/tree/master pour MapRando, merci à lui !
+
 Travail en cours...
