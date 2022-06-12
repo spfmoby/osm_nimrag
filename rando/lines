@@ -7,20 +7,17 @@ tracktype ~ 'grade[3-4]' | smoothness ~ '(intermediate|bad|very_bad)'  { add c_s
 
 # 0x10f01
 ##sentiers GR
-highway=* & c_route_gr=yes {name '${GR}'} [0x10f01 resolution 20 continue]
+highway=* & c_route_gr=yes {name '${GR}'} [0x10f03 resolution 19-21 continue]
+highway=* & c_route_gr=yes {name '${GR}'} [0x10f01 resolution 22 continue]
 ## sentiers GRP
-highway=* & c_route_grp=yes {name '${GRP}'} [0x10f01 resolution 20 continue]
+highway=* & c_route_grp=yes {name '${GRP}'} [0x10f03 resolution 19-21 continue]
+highway=* & c_route_grp=yes {name '${GRP}'} [0x10f01 resolution 22 continue]
 
 # 0x10f02
 ## sentiers balises (PR)
 highway=* & c_route_gr!=* & c_route_grp!=* & c_route_pr=yes [0x10f02 resolution 22 continue]
 ## sentiers balises 
 highway=* & c_route_gr!=* & c_route_grp!=* & ( c_route_hiking=yes | trailblazed=yes ) [0x10f02 resolution 22 continue]
-
-
-#network=nwn [0x10f01 resolution 20 continue]
-#network=rwn [0x10f01 resolution 20 continue]
-#network=lwn [0x10f02 resolution 22 continue]
 
 # 0x10f04 sentiers balises VTT
 highway=* &  c_route_mtb=yes & (c_route_hiking=no | c_route_hiking!=*) [0x10f04 resolution 22 continue]
@@ -153,7 +150,7 @@ route=ferry [0x1b resolution 24]
 
 # Contour 0x20 0x21 0x22
 ## 500m
-contour=elevation & ele ~ '.*\d[0,5]00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x22 resolution 22-23]
+contour=elevation & ele ~ '.*\d[0,5]00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x22 resolution 22-22]
 
 ## 100m
 contour=elevation & ele ~ '\d*00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x22 resolution 23-24]
