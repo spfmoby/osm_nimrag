@@ -218,7 +218,7 @@ highway=* & construction=* [0x10e1c resolution 24]
 boundary=national_park [0x10e1e resolution 20-24]
 
 # 0x10e1f
-leisure=nature_reserve [0x10e1f resolution 21-23]
+leisure=nature_reserve [0x10e1f resolution 21-24]
 
 # 0x10f07
 landuse=military [0x10f07 resolution 22 continue]

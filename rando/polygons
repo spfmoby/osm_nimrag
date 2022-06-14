@@ -21,10 +21,10 @@ landuse=industrial [0x0c resolution 23]
 landuse=commercial [0x0c resolution 23]
 
 # 0x14 
-boundary=national_park [0x14 resolution 20-23]
+boundary=national_park [0x14 resolution 20-22]
 
 # 0x15
-leisure=nature_reserve [0x15 resolution 21-23]
+leisure=nature_reserve [0x15 resolution 21-22]
 
 # 0x19
 leisure=pitch & sport!=* [0x19 resolution 23 continue]
