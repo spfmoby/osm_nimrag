@@ -45,11 +45,11 @@ highway=motorway_link [0x01 road_class=4 road_speed=6 resolution 20]
 highway=trunk [0x02 road_class=4 road_speed=6 resolution 17]
 
 # 0x03
-highway=primary & lanes>=3 & oneway=yes [0x03 road_class=3 road_speed=6 resolution 17]
-highway=primary_link & lanes>=2 & oneway=yes [0x03 road_class=3 road_speed=6 resolution 17]
-highway=trunk_link [0x03 road_class=3 road_speed=6 resolution 17]
-highway=primary [0x03 road_class=3 road_speed=5 resolution 17]
-highway=primary_link [0x03 road_class=3 road_speed=5 resolution 17]
+highway=primary & lanes>=3 & oneway=yes [0x03 road_class=3 road_speed=6 resolution 18]
+highway=primary_link & lanes>=2 & oneway=yes [0x03 road_class=3 road_speed=6 resolution 18]
+highway=trunk_link [0x03 road_class=3 road_speed=6 resolution 18]
+highway=primary [0x03 road_class=3 road_speed=5 resolution 18]
+highway=primary_link [0x03 road_class=3 road_speed=5 resolution 18]
 
 # 0x05
 highway=secondary [0x05 road_class=2 road_speed=4 resolution 21]
