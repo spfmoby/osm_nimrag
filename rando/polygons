@@ -50,7 +50,7 @@ natural=water & area_size()>8000 [0x03f resolution 20]
 natural=water [0x03f resolution 22]
 water=river & width>200 [0x03f resolution 18]
 water=river & (width<200 | width!=*) [0x03f resolution 19]
-leisure=swimming_pool [0x03f resolution 24]
+leisure=swimming_pool & access!=private [0x03f resolution 24]
 
 # 0x4c
 landuse=reservoir [0x4c resolution 23 ]
