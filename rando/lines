@@ -150,16 +150,16 @@ route=ferry [0x1b resolution 24]
 
 # Contour 0x20 0x21 0x22
 ## 500m
-contour=elevation & ele ~ '.*\d[0,5]00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x01d resolution 22-22]
+contour=elevation & ele ~ '.*\d[0,5]00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x022 resolution 22-22]
 
 ## 100m
-contour=elevation & ele ~ '\d*00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x01d resolution 23-24]
+contour=elevation & ele ~ '\d*00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x022 resolution 23-24]
 
 ## 50m
-contour=elevation & ele ~ '.*\d[0,5]0' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x01d resolution 24]
+contour=elevation & ele ~ '.*\d[0,5]0' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x021 resolution 24]
 
 ## 10m
-contour=elevation & ele > 0 [0x01c resolution 24]
+contour=elevation & ele > 0 [0x020 resolution 24]
 
 # 0x26
 waterway=stream & intermittent=yes & (tunnel=no | tunnel!=*) [0x26 resolution 23]

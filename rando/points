@@ -22,6 +22,9 @@ tourism=alpine_hut {name "${name}"} [0x11518 resolution 22]
 tourism=wilderness_hut {name "${name}"} [0x11519 resolution 22]
 natural=water {name "${name}"} [0x1151a resolution 22] 
 
+#gué
 ford=yes [0x11500 resolution 24]
+
+historic=archaeological_site {name "${name}"} [0x11600 resolution 24]
 
 
