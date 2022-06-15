@@ -150,7 +150,7 @@ route=ferry [0x1b resolution 24]
 
 # Contour 0x20 0x21 0x22
 ## 500m
-contour=elevation & ele ~ '.*\d[0,5]00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x022 resolution 22-22]
+contour=elevation & ele ~ '.*\d[0,5]00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x022 resolution 22-22 continue]
 
 ## 100m
 contour=elevation & ele ~ '\d*00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x022 resolution 23-24]
