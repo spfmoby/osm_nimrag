@@ -1,3 +1,5 @@
+# 0x54 TEST -> pas top (trop de polygones n'ont pas de landuse)
+#landuse=* [0x54 resolution 17 continue]
 
 # 0x01
 landuse=residential [0x01 resolution 17 ]
