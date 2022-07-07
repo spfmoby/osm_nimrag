@@ -2,7 +2,6 @@ trail_visibility ~ '(no|horrible|bad)' { add c_visibility=horrible}
 trail_visibility ~ '(intermediate)' | (width>=0.5 & width<=1) { add c_visibility=intermediate}
 access ~ '(private|no)' & (foot=no | foot!=*) & (bicycle=no | bicycle!=*) { add c_access=no}
 tracktype ~ 'grade[1-2]' | smoothness ~ '(excellent|good)'  { add c_smoothness=good}
-tracktype ~ 'grade[3-4]' | smoothness ~ '(intermediate|bad|very_bad)'  { add c_smoothness=intermediate}
 
 
 # 0x10f01
@@ -72,26 +71,6 @@ highway=unclassified [0x07 road_class=2 road_speed=4 resolution 22]
 highway=service [0x07 road_class=2 road_speed=2 resolution 22]
 highway=living_street [0x07 road_class=2 road_speed=2 resolution 22]
 
-# Chemin exploitation carossable prive
-highway=track & c_smoothness=good & c_access=no  [0x10f1f resolution 24 continue]
-highway=track & c_smoothness=good & c_access=no  [0x10f16 resolution 24 continue]
-highway=track & c_smoothness=good & c_access=no  [0x10f12 resolution 24]
-
-# Chemin exploitation carossable 
-highway=track & c_smoothness=good [0x10f1f road_class=0 road_speed=1 resolution 22 continue]
-highway=track & c_smoothness=good [0x10f17 road_class=0 road_speed=1 resolution 22 continue]
-highway=track & c_smoothness=good [0x10f12 road_class=0 road_speed=1 resolution 22]
-
-# Chemin exploitation moindre carossable prive
-highway=track & ( c_smoothness=intermediate | width>=2 ) & c_access=no [0x10f1f resolution 24 continue]
-highway=track & ( c_smoothness=intermediate | width>=2 ) & c_access=no  [0x10f16 resolution 24 continue]
-highway=track & ( c_smoothness=intermediate | width>=2 ) & c_access=no  [0x10f13 resolution 24]
-
-# Chemin exploitation moindre carossable 
-highway=track & ( c_smoothness=intermediate | width>=2 ) [0x10f1f road_class=0 road_speed=1 resolution 22 continue]
-highway=track & ( c_smoothness=intermediate | width>=2 ) [0x10f17 road_class=0 road_speed=1 resolution 22 continue]
-highway=track & ( c_smoothness=intermediate | width>=2 ) [0x10f13 road_class=0 road_speed=1 resolution 22]
-
 #0x10f15
 highway=footway & width>=2 & c_access=no [0x10f15 resolution 24]
 highway=track & c_access=no [0x10f15 resolution 24]
@@ -102,16 +81,19 @@ highway=cycleway & foot=yes & c_access=no [0x10f15 resolution 24]
 highway=cycleway & foot=yes & surface=gravel & (area=no | area!=* )[0x1e resolution 22]
 highway=cycleway & foot=yes & surface=paved & (area=no | area!=* ) [0x1e road_class=0 road_speed=1 resolution 22]
 
-# 0x0a
-highway=footway & width>=2 [0x0a road_class=0 road_speed=1 resolution 22]
-highway=track [0x0a road_class=0 road_speed=1 resolution 22]
-highway=path & foot=designated & bicycle=designated [0x0a road_class=0 road_speed=1 resolution 22]
 
 # 0x0e
 highway=cycleway [0x0e road_class=0 road_speed=1 resolution 22]
 
 # 0x0f
 highway=steps [0x0f road_class=0 road_speed=0 resolution 24]
+
+# 0x10f05 : Piste carossable 
+highway=track & c_smoothness=good [0x10f05 road_class=0 road_speed=1 resolution 22]
+
+# 0x10f06 : Piste forestière ou agricole
+highway=track [0x10f06 road_class=0 road_speed=1 resolution 22]
+highway=footway & width>=2 [0x10f07 road_class=0 road_speed=1 resolution 22]
 
 #0x11f02
 highway=path & c_visibility=horrible & c_access=no [0x11f02 resolution 24]
@@ -214,14 +196,15 @@ embankment=yes [0x10e19 resolution 24]
 # 0x10e1c
 highway=* & construction=* [0x10e1c resolution 24]
 
+# 0x10e1d : Base militaire
+landuse=military [0x10f08 resolution 22 continue]
+
 # 0x10e1e
 boundary=national_park [0x10e1e resolution 20-24]
 
 # 0x10e1f
 leisure=nature_reserve [0x10e1f resolution 21-24]
 
-# 0x10f07
-landuse=military [0x10f07 resolution 22 continue]
 
 # 0x11f06
 barrier=fence [0x11f06 resolution 24 continue]
