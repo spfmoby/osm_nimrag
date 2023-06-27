@@ -26,10 +26,10 @@ highway=* &  c_route_mtb=yes & (c_route_hiking=no | c_route_hiking!=*) [0x10f04 
 
 # 0x0d
 highway=* & tunnel=yes & length()>20 [0x0d resolution 24]
-highway=motorway & tunnel=yes & length()>20 [0x0d road_class=4 road_speed=7 resolution 24]
-highway=motorway_link & tunnel=yes & length()>20 [0x0d road_class=4 road_speed=6 resolution 24]
-highway=trunk & tunnel=yes & length()>20 [0x0d road_class=4 road_speed=6 resolution 24]
-highway=trunk_link & tunnel=yes & length()>20 [0x0d road_class=4 road_speed=5 resolution 24]
+highway=motorway & tunnel=yes & length()>20 { set mkgmap:foot = no ; set mkgmap:bicycle= no ; add oneway = yes } [0x0d road_class=4 road_speed=7 resolution 24]
+highway=motorway_link & tunnel=yes & length()>20 { set mkgmap:foot = no ; set mkgmap:bicycle= no ; add oneway = yes } [0x0d road_class=4 road_speed=6 resolution 24]
+highway=trunk & tunnel=yes & length()>20 { set mkgmap:foot = no ; set mkgmap:bicycle= no } [0x0d road_class=4 road_speed=6 resolution 24]
+highway=trunk_link & tunnel=yes & length()>20 { set mkgmap:foot = no ; set mkgmap:bicycle= no } [0x0d road_class=4 road_speed=5 resolution 24]
 highway=primary & tunnel=yes & length()>20 [0x0d road_class=3 road_speed=5 resolution 24]
 highway=primary_link & tunnel=yes & length()>20 [0x0d road_class=3 road_speed=5 resolution 24]
 highway=secondary & tunnel=yes & length()>20 [0x0d road_class=2 road_speed=4 resolution 24]
@@ -40,26 +40,26 @@ highway=unclassified & tunnel=yes & length()>20 [0x0d road_class=0 road_speed=2 
 highway=residential & tunnel=yes & length()>20 [0x0d road_class=0 road_speed=2 resolution 24]
 
 # 0x01
-highway=motorway [0x01 road_class=4 road_speed=7 resolution 17]
-highway=motorway_link [0x01 road_class=4 road_speed=6 resolution 20]
+highway=motorway { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x01 road_class=4 road_speed=7 resolution 17]
+highway=motorway_link { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x01 road_class=4 road_speed=6 resolution 20]
 
 # 0x02
-highway=trunk [0x02 road_class=4 road_speed=6 resolution 17]
+highway=trunk { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x02 road_class=4 road_speed=6 resolution 17]
 
 # 0x03
-highway=primary & lanes>=3 & oneway=yes [0x03 road_class=3 road_speed=6 resolution 18]
-highway=primary_link & lanes>=2 & oneway=yes [0x03 road_class=3 road_speed=6 resolution 18]
-highway=trunk_link [0x03 road_class=3 road_speed=6 resolution 18]
+highway=primary & lanes>=3 & oneway=yes { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x03 road_class=3 road_speed=6 resolution 18]
+highway=primary_link & lanes>=2 & oneway=yes { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x03 road_class=3 road_speed=6 resolution 18]
+highway=trunk_link { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x03 road_class=3 road_speed=6 resolution 18]
 highway=primary [0x03 road_class=3 road_speed=5 resolution 18]
 highway=primary_link [0x03 road_class=3 road_speed=5 resolution 18]
 
 # 0x05
-highway=secondary [0x05 road_class=2 road_speed=4 resolution 21]
-highway=secondary_link [0x05 road_class=2 road_speed=4 resolution 21]
+highway=secondary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 21]
+highway=secondary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 21]
 
 # 0x06
-highway=tertiary [0x06 road_class=2 road_speed=4 resolution 22]
-highway=tertiary_link [0x06 road_class=2 road_speed=4 resolution 22]
+highway=tertiary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 22]
+highway=tertiary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 22]
 
 
 # 0x10 : Chemin de service ou residence prive
@@ -69,24 +69,24 @@ highway=service & c_access=no [0x10 resolution 24]
 highway=living_street & c_access=no [0x10 resolution 24]
 
 # 0x07
-highway=residential [0x07 road_class=2 road_speed=4 resolution 22]
-highway=unclassified [0x07 road_class=2 road_speed=4 resolution 22]
-highway=service [0x07 road_class=2 road_speed=2 resolution 22]
-highway=living_street [0x07 road_class=2 road_speed=2 resolution 22]
+highway=residential { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=4 resolution 22]
+highway=unclassified { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=4 resolution 22]
+highway=service { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=2 resolution 22]
+highway=living_street { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=2 resolution 22]
 
 # 0x0f : escaliers
-highway=steps [0x0f road_class=0 road_speed=0 resolution 24]
+highway=steps {setaccess no ; set mkgmap:foot = yes } [0x0f road_class=0 road_speed=0 resolution 24]
 
 #------------------------ Pistes Cyclables (highway = cycleway) -----------------------------
 
 
 # 0x1e : piste cyclable en graviers/pavée
-highway=cycleway & foot=yes & surface=gravel & (area=no | area!=* )[0x1e resolution 22]
-highway=cycleway & foot=yes & surface=paved & (area=no | area!=* ) [0x1e road_class=0 road_speed=1 resolution 22]
+highway=cycleway & foot=yes & surface=gravel & (area=no | area!=* ) { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes } [0x1e resolution 22]
+highway=cycleway & foot=yes & surface=paved & (area=no | area!=* ) { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes  } [0x1e road_class=0 road_speed=1 resolution 22]
 
 
 # 0x0e : piste cyclable
-highway=cycleway [0x0e road_class=0 road_speed=1 resolution 22]
+highway=cycleway { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes } [0x0e road_class=0 road_speed=1 resolution 22]
 
 
 
@@ -97,11 +97,11 @@ highway=track & c_access=no [0x10f07 resolution 24]
 highway=footway & width>=2 & c_access=no [0x10f07 resolution 24]
 
 # 0x10f05 : Piste carossable 
-highway=track & c_smoothness=good [0x10f05 road_class=0 road_speed=1 resolution 22]
+highway=track & c_smoothness=good { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes } [0x10f05 road_class=0 road_speed=1 resolution 22]
 
 # 0x10f06 : Piste forestière ou agricole
-highway=track [0x10f06 road_class=0 road_speed=1 resolution 22]
-highway=footway & width>=2 [0x10f07 road_class=0 road_speed=1 resolution 22]
+highway=track { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes } [0x10f06 road_class=0 road_speed=1 resolution 22]
+highway=footway & width>=2 { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes } [0x10f07 road_class=0 road_speed=1 resolution 22]
 
 #------------------------ Sentiers (highway = path) -----------------------------
 
@@ -112,29 +112,29 @@ highway=path & c_access=no [0x10f08 resolution 24]
 highway=path & c_difficulty=T5_T6 [0x10f16 road_class=0 road_speed=0 resolution 22]
 
 #0x10f12 : Sentier très difficile (T4)
-highway=path & c_difficulty=T4 [0x10f12 road_class=0 road_speed=0 resolution 22]
+highway=path & c_difficulty=T4 { setaccess no ; set mkgmap:foot = yes } [0x10f12 road_class=0 road_speed=0 resolution 22]
 
 #0x10f13 : Sentier difficile (T3) non visible
-highway=path & c_difficulty=T3 & c_visibility=horrible [0x10f13 road_class=0 road_speed=0 resolution 22]
+highway=path & c_difficulty=T3 & c_visibility=horrible { setaccess no ; set mkgmap:foot = yes } [0x10f13 road_class=0 road_speed=0 resolution 22]
 
 #0x10f14 : Sentier difficile (T3) peu visible
-highway=path & c_difficulty=T3 & c_visibility=intermediate [0x10f14 road_class=0 road_speed=0 resolution 22]
+highway=path & c_difficulty=T3 & c_visibility=intermediate { setaccess no ; set mkgmap:foot = yes } [0x10f14 road_class=0 road_speed=0 resolution 22]
 
 #0x10f15 : Sentier difficile (T3)
-highway=path & c_difficulty=T3 [0x10f15 road_class=0 road_speed=0 resolution 22]
+highway=path & c_difficulty=T3 { setaccess no ; set mkgmap:foot = yes } [0x10f15 road_class=0 road_speed=0 resolution 22]
 
 #0x10f11 : Sentier facile (T1 - T2 ou inconnu) non visible
-highway=path & c_visibility=horrible [0x10f11 road_class=0 road_speed=0 resolution 22]
+highway=path & c_visibility=horrible { setaccess no ; set mkgmap:foot = yes } [0x10f11 road_class=0 road_speed=0 resolution 22]
 
 #0x10f10 : Sentier facile (T1 - T2 ou inconnu) peu visible
-highway=path & c_visibility=intermediate [0x10f10 road_class=0 road_speed=0 resolution 22]
+highway=path & c_visibility=intermediate { setaccess no ; set mkgmap:foot = yes } [0x10f10 road_class=0 road_speed=0 resolution 22]
 
 #0x10f09 : Sentier facile (T1 - T2 ou inconnu)
-highway=path [0x10f09 road_class=0 road_speed=0 resolution 22]
-highway=pedestrian & bicycle=yes & surface=asphalt & (area=no | area!=* )[0x10f09 road_class=0 road_speed=0 resolution 22]
-highway=pedestrian & (area=no | area!=* )[0x10f09 road_class=0 road_speed=0 resolution 22]
-highway=footway & (bicycle=dismount | bicycle=no) [0x10f09 road_class=0 road_speed=0 resolution 22]
-highway=footway & footway!=* [0x10f09 road_class=0 road_speed=0 resolution 22]
+highway=path { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes } [0x10f09 road_class=0 road_speed=0 resolution 22]
+highway=pedestrian & bicycle=yes & surface=asphalt & (area=no | area!=* ) { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes } [0x10f09 road_class=0 road_speed=0 resolution 22]
+highway=pedestrian & (area=no | area!=* ) { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = no ; set mkgmap:unpaved = yes } [0x10f09 road_class=0 road_speed=0 resolution 22]
+highway=footway & (bicycle=dismount | bicycle=no) { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = no ; set mkgmap:unpaved = yes } [0x10f09 road_class=0 road_speed=0 resolution 22]
+highway=footway & footway!=* { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = no ; set mkgmap:unpaved = yes } [0x10f09 road_class=0 road_speed=0 resolution 22]
 
 #------------------------ Rivières (waterway) -----------------------------
 
