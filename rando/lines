@@ -16,7 +16,7 @@ highway=* & c_route_grp=yes {name '${GRP}'} [0x10f03 resolution 19-21 continue]
 highway=* & c_route_grp=yes {name '${GRP}'} [0x10f01 resolution 22 continue]
 
 # Mise en avant CDT,PCT,AT
-(highway=footway | highway=path) & (name~'^Pacific Crest Trail' | name~'^Continental Divide Trail' | name~'^Appalachian Trail') {name '${name}'} [0x10f03 resolution 5-20]
+(highway=footway | highway=path) & (name~'^Pacific Crest Trail' | name~'^Continental Divide Trail' | name~'^Appalachian Trail') {name '${name}'} [0x10f03 resolution 5-20 continue]
 
 # 0x10f02
 ## sentiers balises (PR)
