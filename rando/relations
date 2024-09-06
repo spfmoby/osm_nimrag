@@ -1,3 +1,14 @@
+# Tag spécifique pour les sentiers un peu mythiques : Appalachian Trail / CDT / PCT mis en avant
+type=route & route ~ '(foot|hiking)' & network ~ '(iwn|nwn|rwn)' & ref ~ '(AT|PCT|CDT)'
+{ apply
+	{
+		set name='${name}';
+		set network='${network}';
+		add c_route_myth = yes;
+	}
+}
+
+
 # CHEMIN
 type=route & route ~ '(foot|hiking)' & via_ferrata_scale!=*  
 { apply

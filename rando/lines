@@ -15,13 +15,18 @@ highway=* & c_route_gr=yes {name '${GR}'} [0x10f01 resolution 22 continue]
 highway=* & c_route_grp=yes {name '${GRP}'} [0x10f03 resolution 19-21 continue]
 highway=* & c_route_grp=yes {name '${GRP}'} [0x10f01 resolution 22 continue]
 
-# Mise en avant CDT,PCT,AT
-(highway=footway | highway=path) & (name~'^Pacific Crest Trail' | name~'^Continental Divide Trail' | name~'^Appalachian Trail') {name '${name}'} [0x10f03 resolution 5-20 continue]
+# Mise en avant CDT,PCT,AT (via relation)
+highway=* & c_route_myth=yes {name '${name}'} [0x11 resolution 1-21 continue]
+
+
+#type=relation & name='Appalachian Trail' {name '${name}'} [0x10f02 resolution 5-22 continue]
 
 # 0x10f02
 ## sentiers balises (PR)
+#highway=* & c_route_gr!=* & c_route_grp!=* & c_route_pr=yes {name '${name}'} [0x10f05 resolution 19-21 continue]
 highway=* & c_route_gr!=* & c_route_grp!=* & c_route_pr=yes {name '${name}'} [0x10f02 resolution 22 continue]
 ## sentiers balises 
+#highway=* & c_route_gr!=* & c_route_grp!=* & ( c_route_hiking=yes | trailblazed=yes ) {name '${name}'} [0x10f05 resolution 19-21 continue]
 highway=* & c_route_gr!=* & c_route_grp!=* & ( c_route_hiking=yes | trailblazed=yes ) {name '${name}'} [0x10f02 resolution 22 continue]
 
 # 0x10f04 sentiers balises VTT
@@ -90,7 +95,7 @@ highway=cycleway & foot=yes & surface=paved & (area=no | area!=* ) { setaccess n
 
 
 # 0x0e : piste cyclable
-highway=cycleway { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes }[0x0e road_class=0 road_speed=1 resolution 22]
+highway=cycleway { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes }[0x0e road_class=0 road_speed=1 resolution 19]
 
 
 
