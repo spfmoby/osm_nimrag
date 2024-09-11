@@ -179,7 +179,7 @@ contour=elevation & ele > 0 [0x020 resolution 24]
 waterway=stream & intermittent=yes & (tunnel=no | tunnel!=*) [0x26 resolution 23]
 
 # 0x29
-man_made=pipeline [0x29 resolution 24]
+man_made=pipeline & (location!=underground | location!=*) [0x28 resolution 24]
 power=line [0x29 resolution 24]
 
 # 0x10e00
