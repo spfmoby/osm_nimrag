@@ -63,8 +63,8 @@ highway=primary [0x03 road_class=3 road_speed=5 resolution 18]
 highway=primary_link [0x03 road_class=3 road_speed=5 resolution 18]
 
 # 0x05
-highway=secondary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 20]
-highway=secondary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 20]
+highway=secondary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 18]
+highway=secondary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 19]
 
 # 0x06
 highway=tertiary & length()>1000 { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 21 continue]
