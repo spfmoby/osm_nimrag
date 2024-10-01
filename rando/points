@@ -32,4 +32,6 @@ ford=yes [0x11500 resolution 24]
 
 historic=archaeological_site {name "${name:fr}" | "${name}"} [0x11600 resolution 24]
 
+#Camping / bivouac
+tourism=camp_site {name "${name:fr}" | "${name}"} [0x02b03 resolution 22]
 

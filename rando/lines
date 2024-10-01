@@ -32,7 +32,7 @@ highway=* & c_route_gr!=* & c_route_grp!=* & ( c_route_hiking=yes | trailblazed=
 # 0x10f04 sentiers balises VTT
 highway=* &  c_route_mtb=yes & (c_route_hiking=no | c_route_hiking!=*) [0x10f04 resolution 22 continue]
 
-# 0x04
+# 0x04 Tunnels
 highway=* & tunnel=yes & length()>20 [0x04 resolution 24]
 highway=motorway & tunnel=yes & length()>20 { set mkgmap:foot = no ; set mkgmap:bicycle= no ; add oneway = yes } [0x04 road_class=4 road_speed=7 resolution 24]
 highway=motorway_link & tunnel=yes & length()>20 { set mkgmap:foot = no ; set mkgmap:bicycle= no ; add oneway = yes } [0x04 road_class=4 road_speed=6 resolution 24]
@@ -48,41 +48,41 @@ highway=unclassified & tunnel=yes & length()>20 [0x04 road_class=0 road_speed=2 
 highway=residential & tunnel=yes & length()>20 [0x04 road_class=0 road_speed=2 resolution 24]
 
 # 0x01
-highway=motorway { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x01 road_class=4 road_speed=7 resolution 17]
+highway=motorway { set mkgmap:foot = no ; set mkgmap:bicycle = no ; name "${name}" } [0x01 road_class=4 road_speed=7 resolution 17]
 highway=motorway_link { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x01 road_class=4 road_speed=6 resolution 20]
 
 # 0x02
-highway=trunk { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x02 road_class=4 road_speed=6 resolution 17]
+highway=trunk { set mkgmap:foot = no ; set mkgmap:bicycle = no ; name "${name}" } [0x02 road_class=4 road_speed=6 resolution 17]
 
 
 # 0x03
-highway=primary & lanes>=3 & oneway=yes { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x03 road_class=3 road_speed=6 resolution 18]
+highway=primary & lanes>=3 & oneway=yes { set mkgmap:foot = no ; set mkgmap:bicycle = no ; name "${name}" } [0x03 road_class=3 road_speed=6 resolution 18]
 highway=primary_link & lanes>=2 & oneway=yes { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x03 road_class=3 road_speed=6 resolution 18]
 highway=trunk_link { set mkgmap:foot = no ; set mkgmap:bicycle = no } [0x03 road_class=3 road_speed=6 resolution 18]
-highway=primary [0x03 road_class=3 road_speed=5 resolution 18]
+highway=primary { name "${name}" } [0x03 road_class=3 road_speed=5 resolution 18]
 highway=primary_link [0x03 road_class=3 road_speed=5 resolution 18]
 
 # 0x05
-highway=secondary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 18]
+highway=secondary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}" } [0x05 road_class=2 road_speed=4 resolution 18]
 highway=secondary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 19]
 
 # 0x06
-highway=tertiary & length()>1000 { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 21 continue]
-highway=tertiary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 22]
+highway=tertiary & length()>1000 { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}" } [0x06 road_class=2 road_speed=4 resolution 21 continue]
+highway=tertiary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}" } [0x06 road_class=2 road_speed=4 resolution 22]
 highway=tertiary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 22]
 
 
 # 0x10f06 : Chemin de service ou residence prive
-highway=residential & c_access=no [0x10f06 resolution 24]
-highway=unclassified & c_access=no [0x10f06 resolution 24]
-highway=service & c_access=no [0x10f06 resolution 24]
-highway=living_street & c_access=no [0x10f06 resolution 24]
+highway=residential & c_access=no { name "${name}" } [0x10f06 resolution 24]
+highway=unclassified & c_access=no { name "${name}" } [0x10f06 resolution 24]
+highway=service & c_access=no { name "${name}" } [0x10f06 resolution 24]
+highway=living_street & c_access=no { name "${name}" } [0x10f06 resolution 24]
 
 # 0x07
-highway=residential { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=4 resolution 22]
-highway=unclassified { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=4 resolution 22]
-highway=service { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=2 resolution 22]
-highway=living_street { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x07 road_class=2 road_speed=2 resolution 22]
+highway=residential { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}" } [0x07 road_class=2 road_speed=4 resolution 22]
+highway=unclassified { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}" } [0x07 road_class=2 road_speed=4 resolution 22]
+highway=service { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}" } [0x07 road_class=2 road_speed=2 resolution 22]
+highway=living_street { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}" } [0x07 road_class=2 road_speed=2 resolution 22]
 
 # 0x0f : escaliers
 highway=steps {setaccess no ; set mkgmap:foot = yes } [0x0f road_class=0 road_speed=0 resolution 24]
@@ -91,12 +91,12 @@ highway=steps {setaccess no ; set mkgmap:foot = yes } [0x0f road_class=0 road_sp
 
 
 # 0x09 : piste cyclable en graviers/pavée
-highway=cycleway & foot=yes & surface=gravel & (area=no | area!=* ){ setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes }[0x09 resolution 22]
-highway=cycleway & foot=yes & surface=paved & (area=no | area!=* ) { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes  } [0x09 road_class=0 road_speed=1 resolution 22]
+highway=cycleway & foot=yes & surface=gravel & (area=no | area!=* ){ setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; set mkgmap:unpaved = yes  ; name "${name}" }[0x09 resolution 22]
+highway=cycleway & foot=yes & surface=paved & (area=no | area!=* ) { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}"  } [0x09 road_class=0 road_speed=1 resolution 22]
 
 
 # 0x0e : piste cyclable
-highway=cycleway { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes }[0x0e road_class=0 road_speed=1 resolution 19]
+highway=cycleway { setaccess no ; set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}"  }[0x0e road_class=0 road_speed=1 resolution 19]
 
 
 
