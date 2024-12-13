@@ -1,5 +1,5 @@
 # Tag spécifique pour les sentiers un peu mythiques : Appalachian Trail / CDT / PCT mis en avant
-type=route & route ~ '(foot|hiking)' & network ~ '(iwn|nwn|rwn)' & ref ~ '(AT|PCT|CDT)'
+type=route & route ~ '(foot|hiking)' & network:type ~ '(iwn|nwn|rwn)' & ref ~ '(AT|PCT|CDT)'
 { apply
 	{
 		set name='${name}';

@@ -35,3 +35,7 @@ historic=archaeological_site {name "${name:fr}" | "${name}"} [0x11600 resolution
 #Camping / bivouac
 tourism=camp_site {name "${name:fr}" | "${name}"} [0x02b03 resolution 22]
 
+historic=monument { name '${name}' | 'Monument' } [0x1150a resolution 22]
+information=board { name '${name}' | 'Information' } [0x1150b resolution 22]
+barrier=cattle_grid { name '${name}' | 'Grille à bétail' } [0x1150c resolution 23]
+natural=volcano { name '${name}' | 'Volcano' } [0x1150d resolution 22]
