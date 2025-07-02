@@ -17,7 +17,7 @@ amenity=parking & (access ~ '(yes|customers|permissive)' | access!=*) & (parking
 amenity=toilets & (fee=no | fee!=*) [0x11516 resolution 23]
 amenity=shower & (fee=no | fee!=*) [0x11516 resolution 23]
 
-natural=spring [0x6511 resolution 24]
+natural=spring [0x6511 resolution 22]
 tourism=picnic_site [0x11517 resolution 24]
 sport=climbing & (outdoor=yes | outdoor!=*) [0x11515 resolution 23] 
 tourism=viewpoint [0x05200 resolution 24] 
