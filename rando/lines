@@ -172,7 +172,7 @@ contour=elevation & ele ~ '.*\d[0,5]00' & ele > 0 { name '${ele|conv:m=>ft} '; }
 contour=elevation & ele ~ '\d*00' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x022 resolution 23-24]
 
 ## 50m
-contour=elevation & ele ~ '.*\d[0,5]0' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x021 resolution 24]
+contour=elevation & ele ~ '.*\d*[0,5]0' & ele > 0 { name '${ele|conv:m=>ft} '; } [0x021 resolution 24]
 
 ## 10m
 contour=elevation & ele > 0 [0x020 resolution 24]
