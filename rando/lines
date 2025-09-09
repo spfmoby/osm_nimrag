@@ -1,3 +1,4 @@
+# c_difficulty et c_visibility est utilisé pour regrouper des sentiers sous des traits identiques (T5/T6 même couleur par ex)
 trail_visibility ~ '(no|horrible|bad)' { add c_visibility=horrible}
 trail_visibility ~ '(intermediate)' | (width>=0.5 & width<=1) { add c_visibility=intermediate}
 sac_scale ~ '(demanding_mountain_hiking)' { add c_difficulty=T3}
@@ -6,6 +7,17 @@ sac_scale ~ '(demanding_alpine_hiking|difficult_alpine_hiking)' { add c_difficul
 access ~ '(private|no)' & (foot=no | foot!=*) & (bicycle=no | bicycle!=*) { add c_access=no}
 tracktype ~ 'grade[1-2]' | smoothness ~ '(excellent|good)'  { add c_smoothness=good}
 
+# pour afficher proprement le texte associé aux difficultés des chemins
+sac_scale=hiking { add sac_label=T1 }
+sac_scale=mountain_hiking { add sac_label=T2 }
+sac_scale=demanding_mountain_hiking { add sac_label=T3 }
+sac_scale=alpine_hiking { add sac_label=T4 }
+sac_scale=demanding_alpine_hiking { add sac_label=T5 }
+sac_scale=difficult_alpine_hiking { add sac_label=T6 }
+
+# On ajoute le sac_label (T1 à 6) au nom du sentier
+highway=path & sac_label=* & name=* { name '${name} (${sac_label})' }
+highway=path & sac_label=* & name!=* { name '${sac_label}' }
 
 # 0x10f01
 ##sentiers GR
