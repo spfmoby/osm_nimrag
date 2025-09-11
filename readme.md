@@ -1,4 +1,4 @@
-#Styles randonnée pour montres Epix / Fenix / 965 / 955 / 945 ... sur base de cartes OSM#
+# Styles randonnée pour montres Epix / Fenix / 965 / 955 / 945 ... sur base de cartes OSM #
 
 Le rendu se focalise sur la lisibilité pour l'utilisation en randonnée :
 - courbes de niveau précises
@@ -8,7 +8,7 @@ Le rendu se focalise sur la lisibilité pour l'utilisation en randonnée :
 - le rendu essaye de prendre en compte au mieux les spécificités des écrans OLED (haute résolution + consommation moindre de batterie si l'affichage est sombre) tout en restant cohérent sur écran transflectif.
 ...
 
-##Légende :##
+## Légende : ##
 
 Lignes :
 ![Alt text](https://github.com/spfmoby/osm_nimrag/blob/master/legende/lines.png?raw=true "Lignes")
