@@ -80,9 +80,9 @@ highway=secondary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${n
 highway=secondary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x05 road_class=2 road_speed=4 resolution 19]
 
 # 0x06
-highway=tertiary & length()>1000 { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}" } [0x06 road_class=2 road_speed=4 resolution 21 continue]
-highway=tertiary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}" } [0x06 road_class=2 road_speed=4 resolution 22]
-highway=tertiary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 22]
+highway=tertiary & length()>1000 { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}" } [0x06 road_class=2 road_speed=4 resolution 21-22 continue]
+highway=tertiary { set mkgmap:foot = yes ; set mkgmap:bicycle = yes ; name "${name}" } [0x06 road_class=2 road_speed=4 resolution 23]
+highway=tertiary_link { set mkgmap:foot = yes ; set mkgmap:bicycle = yes } [0x06 road_class=2 road_speed=4 resolution 23]
 
 
 # 0x10f06 : Chemin de service ou residence prive
