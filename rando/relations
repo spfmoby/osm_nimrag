@@ -7,6 +7,16 @@ type=route & route ~ '(foot|hiking)' & network ~ '(iwn|nwn|rwn)' & ref ~ '(AT|PC
 		add c_route_myth = yes;
 	}
 }
+# Tag spécifique pour les sentiers alternatifs CDT & co
+type=route & network ~ '(iwn|nwn|rwn)' & name ~ '(Continental Divide Trail Alternate Routes|CDT .{3}[A-Z]{2})'
+{ apply
+	{
+		set name='${name}';
+		set network='${network}';
+		add c_route_myth_alt = yes;
+	}
+}
+
 
 # CHEMIN
 type=route & route ~ '(foot|hiking)' & via_ferrata_scale!=*  

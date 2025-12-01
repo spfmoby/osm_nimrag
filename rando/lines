@@ -31,6 +31,10 @@ highway=* & c_route_grp=yes {name '${GRP}'} [0x10f01 resolution 22 continue]
 highway=* & c_route_myth=yes {name '${name}'} [0x10f03 resolution 1-21 continue]
 highway=* & c_route_myth=yes {name '${name}'} [0x10f01 resolution 22 continue]
 
+# Mise en avant des chemins alternatifs CDT,PCT,AT (via relation)
+highway=* & c_route_myth_alt=yes {name '${name}'} [0x10f09 resolution 1-21 continue]
+highway=* & c_route_myth_alt=yes {name '${name}'} [0x10f10 resolution 22 continue]
+
 
 #type=relation & name='Appalachian Trail' {name '${name}'} [0x10f02 resolution 5-22 continue]
 
