@@ -49,6 +49,11 @@ highway=* & c_route_gr!=* & c_route_grp!=* & c_route_myth!=* & ( c_route_hiking=
 # 0x10f04 sentiers balises VTT
 highway=* &  c_route_mtb=yes & (c_route_hiking=no | c_route_hiking!=*) [0x10f04 resolution 22 continue]
 
+# Sens uniques
+highway=* & oneway=yes [0x10607 resolution 24 continue]
+highway=* & oneway=1 [0x10607 resolution 24 continue]
+highway=* & oneway=true [0x10607 resolution 24 continue]
+
 # 0x04 Tunnels
 highway=* & tunnel=yes & length()>20 [0x04 resolution 24]
 highway=motorway & tunnel=yes & length()>20 { set mkgmap:foot = no ; set mkgmap:bicycle= no ; add oneway = yes } [0x04 road_class=4 road_speed=7 resolution 24]
@@ -100,6 +105,8 @@ highway=residential { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "
 highway=unclassified { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}" } [0x07 road_class=2 road_speed=4 resolution 22]
 highway=service { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}" } [0x07 road_class=2 road_speed=2 resolution 22]
 highway=living_street { set mkgmap:foot = yes ; set mkgmap:bicycle = yes  ; name "${name}" } [0x07 road_class=2 road_speed=2 resolution 22]
+
+
 
 # 0x0f : escaliers
 highway=steps {setaccess no ; set mkgmap:foot = yes } [0x0f road_class=0 road_speed=0 resolution 24]
